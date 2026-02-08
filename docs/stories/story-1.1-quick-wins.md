@@ -16,23 +16,23 @@ Corrigir bugs, remover lixo e fazer ajustes rápidos que melhoram imediatamente 
 
 ## Tasks
 
-- [ ] **SYS-03:** Inicializar Git (`git init`, `.gitignore`, primeiro commit)
-- [ ] **SYS-14:** Corrigir link "Diagnóstico" no nav: `#home` → `#diagnosis` (adicionar id na seção)
-- [ ] **SYS-08:** Renomear "Diagnóstico IA" → "Consulte um Técnico" (Header.tsx, Hero.tsx, AiAssistant.tsx)
-- [ ] **UX-13:** Corrigir link "Estoque" no Footer (apontar para destino correto ou remover)
-- [ ] **SYS-09:** Remover `.env.local` com placeholder inútil
-- [ ] **SYS-15:** Atualizar README com informações reais do projeto
-- [ ] **SYS-16:** Remover `metadata.json` (artefato do AI Studio)
+- [x] **SYS-03:** Inicializar Git (`git init`, `.gitignore`, primeiro commit)
+- [x] **SYS-14:** Corrigir link "Diagnóstico" no nav: `#home` → `#diagnosis` (adicionar id na seção)
+- [x] **SYS-08:** Renomear "Diagnóstico IA" → "Consulte um Técnico" (Header.tsx, Hero.tsx, AiAssistant.tsx)
+- [x] **UX-13:** Corrigir link "Estoque" no Footer (apontar para destino correto ou remover)
+- [x] **SYS-09:** Remover `.env.local` com placeholder inútil
+- [x] **SYS-15:** Atualizar README com informações reais do projeto
+- [x] **SYS-16:** Remover `metadata.json` (artefato do AI Studio)
 
 ---
 
 ## Critérios de Aceite
 
-- [ ] Todos os links de navegação funcionam corretamente
-- [ ] Nenhuma referência a "IA" ou "AI" na interface
-- [ ] Repositório Git inicializado com .gitignore adequado
-- [ ] Nenhum arquivo desnecessário no projeto
-- [ ] WhatsApp abre com mensagem pré-formatada correta
+- [x] Todos os links de navegação funcionam corretamente
+- [x] Nenhuma referência a "IA" ou "AI" na interface
+- [x] Repositório Git inicializado com .gitignore adequado
+- [x] Nenhum arquivo desnecessário no projeto
+- [x] WhatsApp abre com mensagem pré-formatada correta
 
 ---
 

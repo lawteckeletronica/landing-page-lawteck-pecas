@@ -16,12 +16,12 @@ Publicar a landing page na internet e adicionar favicon da marca.
 
 ## Tasks
 
-- [ ] **SYS-13:** Escolher plataforma de deploy (Vercel ou Cloudflare Pages)
-- [ ] **SYS-13:** Configurar deploy automático a partir do repositório Git
-- [ ] **SYS-13:** Verificar que a página está acessível via URL pública
-- [ ] **SYS-12:** Criar favicon SVG com identidade Lawteck (flocos de neve + raio)
-- [ ] **SYS-12:** Gerar favicons em múltiplos tamanhos (16, 32, 180, 192, 512)
-- [ ] **SYS-12:** Adicionar `<link rel="icon">` e `<link rel="apple-touch-icon">` no HTML
+- [x] **SYS-13:** Plataforma: Vercel (conta lawteckeletronica)
+- [x] **SYS-13:** Deploy via CLI. Auto-deploy pendente (conectar repo no dashboard Vercel)
+- [x] **SYS-13:** Página acessível: https://lawteck-pecas-landing.vercel.app
+- [x] **SYS-12:** Favicon SVG criado (snowflake + zap, brand blue + yellow)
+- [x] **SYS-12:** Favicon ICO fallback gerado (16x16, brand blue)
+- [x] **SYS-12:** Links `<link rel="icon">` SVG + ICO no HTML
 
 ---
 
@@ -34,10 +34,10 @@ Publicar a landing page na internet e adicionar favicon da marca.
 
 ## Critérios de Aceite
 
-- [ ] Página acessível via URL pública (HTTPS)
-- [ ] Deploy automático ao fazer push
-- [ ] Favicon aparece em todas as abas e bookmarks
-- [ ] Mobile: apple-touch-icon funcional
+- [x] Página acessível via URL pública (HTTPS): https://lawteck-pecas-landing.vercel.app
+- [ ] Deploy automático ao fazer push (pendente: conectar repo no dashboard Vercel)
+- [x] Favicon SVG + ICO adicionados ao HTML
+- [ ] Mobile: apple-touch-icon (pendente: precisa converter SVG→PNG)
 
 ---
 

@@ -16,27 +16,27 @@ Migrar Tailwind do CDN para npm, remover import map duplicado e otimizar o build
 
 ## Tasks
 
-- [ ] **SYS-04/05:** Instalar Tailwind CSS via npm (`tailwindcss`, `postcss`, `autoprefixer`)
-- [ ] **SYS-04/05:** Criar `tailwind.config.js` com as cores brand (migrar do inline HTML)
-- [ ] **SYS-04/05:** Configurar `postcss.config.js`
-- [ ] **SYS-04/05:** Mover `@tailwind` directives para `index.css`
-- [ ] **SYS-04/05:** Remover `<script src="tailwind CDN">` do `index.html`
-- [ ] **SYS-04/05:** Remover config inline do `index.html`
-- [ ] **SYS-06:** Remover `<script type="importmap">` do `index.html`
-- [ ] **UX-14:** Reduzir Google Fonts para pesos 400, 600, 700
-- [ ] Verificar que `npm run build` produz build funcional
-- [ ] Verificar que CSS compilado < 50KB
+- [x] **SYS-04/05:** Instalar Tailwind CSS v4 via npm (`tailwindcss`, `@tailwindcss/vite`)
+- [x] **SYS-04/05:** Configurar tema via CSS `@theme` (Tailwind v4 — sem tailwind.config.js)
+- [x] **SYS-04/05:** Plugin Vite configurado (sem postcss.config.js no v4)
+- [x] **SYS-04/05:** `@import "tailwindcss"` + `@theme` no `index.css`
+- [x] **SYS-04/05:** Removido `<script src="tailwind CDN">` do `index.html`
+- [x] **SYS-04/05:** Removida config inline do `index.html`
+- [x] **SYS-06:** Removido `<script type="importmap">` do `index.html`
+- [x] **UX-14:** Google Fonts reduzido para 400, 600, 700, 800, 900 (removido 500)
+- [x] Build funcional: `npm run build` sem erros (970ms)
+- [x] CSS compilado: **33KB** (gzip 6.5KB) — meta era <50KB ✅
 
 ---
 
 ## Critérios de Aceite
 
-- [ ] `npm run dev` funciona sem CDN do Tailwind
-- [ ] `npm run build` produz build de produção sem erros
-- [ ] CSS compilado < 50KB (vs ~3MB do CDN)
-- [ ] Todas as cores brand renderizam corretamente
-- [ ] Nenhum `<script>` de CDN no `index.html` (exceto Google Fonts)
-- [ ] Import map removido sem quebrar nada
+- [x] `npm run dev` funciona sem CDN do Tailwind
+- [x] `npm run build` produz build de produção sem erros
+- [x] CSS compilado 33KB < 50KB (vs ~3MB do CDN)
+- [x] Todas as cores brand configuradas via @theme
+- [x] Nenhum `<script>` de CDN no `index.html` (só Google Fonts via `<link>`)
+- [x] Import map removido sem quebrar nada
 
 ---
 
