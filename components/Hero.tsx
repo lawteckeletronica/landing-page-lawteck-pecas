@@ -7,9 +7,11 @@ export const Hero: React.FC = () => {
       {/* Background with Gradient/Image Overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-900 via-brand-blue-800 to-brand-blue-600 opacity-90 z-10"></div>
-        <img 
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80" 
-          alt="Placa Eletrônica Background" 
+        <img
+          src="/images/hero-bg.jpg"
+          alt="Placa eletrônica de ar condicionado Lawteck"
+          width={1200}
+          height={800}
           className="w-full h-full object-cover grayscale mix-blend-overlay"
         />
         {/* Abstract Curves */}

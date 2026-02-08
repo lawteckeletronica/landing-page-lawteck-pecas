@@ -10,7 +10,7 @@ const products = [
     oldPrice: "R$ 250,00",
     warranty: "3 Meses",
     features: ["Compatível 7k-30k", "Display Digital", "Com Controle"],
-    img: "https://picsum.photos/id/1/400/300"
+    img: "/images/placa-universal-split.jpg"
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const products = [
     oldPrice: "R$ 580,00",
     warranty: "5 Meses",
     features: ["Original", "Revisada", "Plug & Play"],
-    img: "https://picsum.photos/id/60/400/300",
+    img: "/images/placa-springer-midea-12k.jpg",
     popular: true
   },
   {
@@ -31,7 +31,7 @@ const products = [
     oldPrice: "R$ 900,00",
     warranty: "5 Meses",
     features: ["Inverter", "Testada", "Econômica"],
-    img: "https://picsum.photos/id/20/400/300"
+    img: "/images/placa-lg-dual-inverter.jpg"
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const products = [
     oldPrice: "R$ 850,00",
     warranty: "5 Meses",
     features: ["Original", "Smart", "Envio Imediato"],
-    img: "https://picsum.photos/id/119/400/300"
+    img: "/images/placa-samsung-virus-doctor.jpg"
   }
 ];
 
@@ -72,9 +72,12 @@ export const Products: React.FC = () => {
                      {product.condition}
                    </span>
                 </div>
-                <img 
-                  src={product.img} 
-                  alt={product.title} 
+                <img
+                  src={product.img}
+                  alt={`Placa eletrônica ${product.title} - ${product.condition}`}
+                  width={400}
+                  height={300}
+                  loading="lazy"
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
