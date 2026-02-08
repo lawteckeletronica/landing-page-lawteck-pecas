@@ -17,19 +17,19 @@ Adicionar seções que aumentam conversão: passo-a-passo de compra, perguntas f
 ## Tasks
 
 ### Seção "Como Funciona" (3h)
-- [ ] **UX-15:** Criar componente `HowItWorks.tsx`
-- [ ] Design: 4 steps horizontais com ícones
+- [x] **UX-15:** Criar componente `HowItWorks.tsx`
+- [x] Design: 4 steps horizontais com ícones
   1. Escolha sua placa (Search icon)
   2. Fale com nosso técnico (MessageCircle icon)
   3. Receba em casa (Truck icon)
   4. Instale com suporte (Wrench icon)
-- [ ] Posicionar entre Features e Products
-- [ ] Responsivo: horizontal em desktop, vertical em mobile
+- [x] Posicionar entre Features e Products
+- [x] Responsivo: horizontal em desktop, vertical em mobile
 
 ### Seção FAQ (2h)
-- [ ] **UX-16:** Criar componente `FAQ.tsx`
-- [ ] Implementar accordion collapsible (5-8 perguntas)
-- [ ] Perguntas sugeridas:
+- [x] **UX-16:** Criar componente `FAQ.tsx`
+- [x] Implementar accordion collapsible (5-8 perguntas)
+- [x] Perguntas sugeridas:
   - "Como sei qual placa serve no meu ar?"
   - "Qual a diferença entre nova e seminova?"
   - "Como funciona a garantia?"
@@ -37,24 +37,24 @@ Adicionar seções que aumentam conversão: passo-a-passo de compra, perguntas f
   - "Vocês fazem instalação?"
   - "Posso devolver se não servir?"
   - "Quais formas de pagamento?"
-- [ ] Posicionar antes dos Testimonials
+- [x] Posicionar antes dos Testimonials
 
 ### Seção Garantia (2h)
-- [ ] **UX-18:** Criar componente `Warranty.tsx`
-- [ ] Design: banner com selo visual de garantia
-- [ ] Conteúdo: política simplificada (troca, prazo, condições)
-- [ ] CTA: "Compre com segurança" → WhatsApp
-- [ ] Posicionar entre Products e FAQ
+- [x] **UX-18:** Criar componente `Warranty.tsx`
+- [x] Design: banner com selo visual de garantia
+- [x] Conteúdo: política simplificada (troca, prazo, condições)
+- [x] CTA: "Compre com segurança" → WhatsApp
+- [x] Posicionar entre Products e FAQ
 
 ---
 
 ## Critérios de Aceite
 
-- [ ] 3 novas seções renderizam corretamente
-- [ ] Responsivo em mobile, tablet e desktop
-- [ ] FAQ accordion abre/fecha com animação suave
-- [ ] Links de navegação no Header atualizados com novas seções
-- [ ] Novas seções seguem design system existente (cores brand)
+- [x] 3 novas seções renderizam corretamente
+- [x] Responsivo em mobile, tablet e desktop
+- [x] FAQ accordion abre/fecha com animação suave
+- [x] Links de navegação no Header atualizados com novas seções
+- [x] Novas seções seguem design system existente (cores brand)
 
 ---
 
