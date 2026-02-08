@@ -1,5 +1,7 @@
 {
   "rewrites": [
-    { "source": "/pecas/(.*)", "destination": "/pecas/$1" }
+    { "source": "/pecas", "destination": "/index.html" },
+    { "source": "/pecas/", "destination": "/index.html" },
+    { "source": "/pecas/:path*", "destination": "/:path*" }
   ]
 }
