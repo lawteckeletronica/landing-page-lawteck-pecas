@@ -7,9 +7,10 @@ export const Header: React.FC = () => {
   const navLinks = [
     { name: 'INÍCIO', href: '#home' },
     { name: 'VANTAGENS', href: '#features' },
-    { name: 'CONSULTE UM TÉCNICO', href: '#diagnosis' },
     { name: 'PRODUTOS', href: '#products' },
-    { name: 'DEPOIMENTOS', href: '#testimonials' },
+    { name: 'GARANTIA', href: '#warranty' },
+    { name: 'FAQ', href: '#faq' },
+    { name: 'CONSULTE UM TÉCNICO', href: '#diagnosis' },
   ];
 
   return (

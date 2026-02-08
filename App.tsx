@@ -2,10 +2,13 @@ import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Features } from './components/Features';
+import { HowItWorks } from './components/HowItWorks';
 import { Products } from './components/Products';
+import { Warranty } from './components/Warranty';
+import { FAQ } from './components/FAQ';
 import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
-import { Phone, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 const App: React.FC = () => {
   
@@ -30,7 +33,10 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <Features />
+        <HowItWorks />
         <Products />
+        <Warranty />
+        <FAQ />
         <Testimonials />
       </main>
 
