@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, Snowflake, Zap, ArrowDownToLine } from 'lucide-react';
+import { Menu, X, Phone, Snowflake, Zap } from 'lucide-react';
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,10 +47,7 @@ export const Header: React.FC = () => {
                   <div className="flex items-center">
                     <span className="font-black text-2xl sm:text-4xl text-brand-blue-800 tracking-tighter">Law</span>
                     <span className="font-black text-2xl sm:text-4xl text-brand-blue-500 tracking-tighter">Teck</span>
-                    <div className="relative ml-0.5">
-                       <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-brand-blue-800 absolute -top-1 -right-1 rotate-12" />
-                       <ArrowDownToLine className="w-5 h-5 sm:w-6 sm:h-6 text-brand-blue-800 mt-2" />
-                    </div>
+                    <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-brand-yellow-400 fill-brand-yellow-400 ml-0.5 -mt-1" />
                   </div>
                   <span className="text-brand-blue-800 font-bold text-xs sm:text-sm tracking-[0.3em] ml-1 uppercase">Peças</span>
                 </div>
