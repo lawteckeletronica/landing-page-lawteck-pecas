@@ -38,8 +38,8 @@ export const Testimonials: React.FC = () => {
             O Que Nossos Clientes Dizem
           </h3>
           <div className="flex justify-center items-center gap-2 bg-white/10 inline-flex px-4 py-2 rounded-full backdrop-blur-sm">
-             <div className="flex text-brand-yellow-400">
-               {[...Array(5)].map((_, i) => <Star key={i} fill="currentColor" size={20} />)}
+             <div className="flex text-brand-yellow-400" role="img" aria-label="Avaliação 4.9 de 5 estrelas">
+               {[...Array(5)].map((_, i) => <Star key={i} fill="currentColor" size={20} aria-hidden="true" />)}
              </div>
              <span className="font-bold text-sm">4.9/5 de Satisfação</span>
           </div>
@@ -50,8 +50,8 @@ export const Testimonials: React.FC = () => {
             <div key={idx} className="bg-brand-blue-800 p-8 rounded-tr-3xl rounded-bl-3xl border border-brand-blue-700 relative hover:bg-brand-blue-700 transition-colors">
               <Quote className="text-brand-blue-900 absolute top-6 right-6 opacity-50" size={64} />
               
-              <div className="flex text-brand-yellow-400 mb-6">
-                {[...Array(review.stars)].map((_, i) => <Star key={i} fill="currentColor" size={16} />)}
+              <div className="flex text-brand-yellow-400 mb-6" role="img" aria-label={`Avaliação ${review.stars} de 5 estrelas`}>
+                {[...Array(review.stars)].map((_, i) => <Star key={i} fill="currentColor" size={16} aria-hidden="true" />)}
               </div>
               
               <p className="text-brand-blue-50 mb-8 font-medium italic relative z-10 leading-relaxed">

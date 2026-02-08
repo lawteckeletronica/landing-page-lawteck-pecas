@@ -14,6 +14,10 @@ export const Header: React.FC = () => {
 
   return (
     <header className="fixed w-full z-50">
+      {/* Skip Navigation */}
+      <a href="#home" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:bg-brand-yellow-400 focus:text-brand-blue-900 focus:px-4 focus:py-2 focus:rounded-md focus:font-bold">
+        Pular para o conteúdo
+      </a>
       {/* Top Bar - Dark Blue */}
       <div className="bg-brand-blue-900 text-white py-2 px-4 hidden sm:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-xs font-bold tracking-wider">
@@ -84,7 +88,9 @@ export const Header: React.FC = () => {
             <div className="lg:hidden flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-brand-blue-900 hover:text-brand-blue-600 focus:outline-none"
+                className="text-brand-blue-900 hover:text-brand-blue-600 focus:outline-none focus:ring-2 focus:ring-brand-blue-500 rounded-md p-1"
+                aria-expanded={isMenuOpen}
+                aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
               >
                 {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
               </button>
