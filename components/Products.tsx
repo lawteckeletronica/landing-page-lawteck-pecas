@@ -1,49 +1,31 @@
-import React from 'react';
-import { Check, ShoppingCart } from 'lucide-react';
+import React, { useState } from 'react';
+import { Check, ShoppingCart, ImageOff } from 'lucide-react';
+import { products } from '../data/products';
 
-const products = [
-  {
-    id: 1,
-    title: "Placa Universal Split",
-    condition: "Nova",
-    price: "R$ 189,90",
-    oldPrice: "R$ 250,00",
-    warranty: "3 Meses",
-    features: ["Compatível 7k-30k", "Display Digital", "Com Controle"],
-    img: "/images/placa-universal-split.jpg"
-  },
-  {
-    id: 2,
-    title: "Springer Midea 12k",
-    condition: "Seminova",
-    price: "R$ 299,00",
-    oldPrice: "R$ 580,00",
-    warranty: "5 Meses",
-    features: ["Original", "Revisada", "Plug & Play"],
-    img: "/images/placa-springer-midea-12k.jpg",
-    popular: true
-  },
-  {
-    id: 3,
-    title: "Inverter LG Dual Voice",
-    condition: "Seminova",
-    price: "R$ 450,00",
-    oldPrice: "R$ 900,00",
-    warranty: "5 Meses",
-    features: ["Inverter", "Testada", "Econômica"],
-    img: "/images/placa-lg-dual-inverter.jpg"
-  },
-  {
-    id: 4,
-    title: "Samsung Vírus Doctor",
-    condition: "Seminova",
-    price: "R$ 380,00",
-    oldPrice: "R$ 850,00",
-    warranty: "5 Meses",
-    features: ["Original", "Smart", "Envio Imediato"],
-    img: "/images/placa-samsung-virus-doctor.jpg"
+const ProductImage: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
+  const [error, setError] = useState(false);
+
+  if (error) {
+    return (
+      <div className="w-full h-full flex flex-col items-center justify-center bg-brand-blue-50 text-brand-blue-300">
+        <ImageOff size={48} />
+        <span className="text-xs font-bold mt-2 uppercase">Imagem indisponível</span>
+      </div>
+    );
   }
-];
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      width={400}
+      height={300}
+      loading="lazy"
+      onError={() => setError(true)}
+      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+    />
+  );
+};
 
 export const Products: React.FC = () => {
   return (
@@ -72,13 +54,9 @@ export const Products: React.FC = () => {
                      {product.condition}
                    </span>
                 </div>
-                <img
+                <ProductImage
                   src={product.img}
                   alt={`Placa eletrônica ${product.title} - ${product.condition}`}
-                  width={400}
-                  height={300}
-                  loading="lazy"
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
 
@@ -102,12 +80,12 @@ export const Products: React.FC = () => {
                   </div>
                   <div className="text-3xl font-black text-brand-blue-800 tracking-tight mb-1">{product.price}</div>
                   <p className="text-[10px] text-gray-500 font-bold mb-3">Pix com desconto | Cartão até 12x</p>
-                  
+
                   <a
                     href={`https://wa.me/5585996513548?text=${encodeURIComponent(`Olá! Tenho interesse na placa:\n\n📋 *${product.title}*\n📦 Condição: ${product.condition}\n💰 Valor: ${product.price}\n🛡️ Garantia: ${product.warranty}\n\nGostaria de comprar!`)}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full block bg-brand-blue-600 hover:bg-brand-blue-800 text-white text-center font-bold py-3 rounded-lg uppercase text-sm transition-colors flex items-center justify-center gap-2"
+                    className="w-full block bg-brand-blue-600 hover:bg-brand-blue-800 active:scale-95 text-white text-center font-bold py-3 rounded-lg uppercase text-sm transition-all flex items-center justify-center gap-2"
                   >
                     <ShoppingCart size={18} />
                     Comprar

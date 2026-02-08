@@ -47,6 +47,19 @@ body {
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
+/* ===== Touch-friendly: disable hover on touch devices ===== */
+@media (hover: none) {
+  .hover\:scale-110:hover {
+    transform: none;
+  }
+  .hover\:-translate-y-2:hover {
+    transform: none;
+  }
+  .hover\:shadow-2xl:hover {
+    box-shadow: none;
+  }
+}
+
 /* ===== Animations ===== */
 @keyframes bounce-slow {
   0%, 100% {
