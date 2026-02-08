@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lawteck-pecas-landing.vercel.app/sitemap.xml
+Sitemap: https://lp.lawteck.com.br/pecas/sitemap.xml
