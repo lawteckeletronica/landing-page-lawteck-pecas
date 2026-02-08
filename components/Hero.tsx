@@ -1,4 +1,5 @@
 import React from 'react';
+import { ShieldCheck, Truck, Star } from 'lucide-react';
 import { AiAssistant } from './AiAssistant';
 
 export const Hero: React.FC = () => {
@@ -35,6 +36,21 @@ export const Hero: React.FC = () => {
             <p className="text-xl sm:text-2xl font-light text-gray-200 mb-8 max-w-2xl leading-relaxed">
               Somos a única empresa que <strong>testa 100% das placas</strong>. <span className="text-brand-yellow-400 font-bold">Frete Grátis</span> para todo o Brasil.
             </p>
+
+            <div className="flex flex-wrap gap-6 mb-8 text-sm text-gray-300 font-bold">
+              <div className="flex items-center gap-2">
+                <ShieldCheck size={18} className="text-brand-yellow-400" />
+                <span>+5.000 placas vendidas</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Truck size={18} className="text-brand-yellow-400" />
+                <span>Frete grátis todo Brasil</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Star size={18} className="text-brand-yellow-400 fill-brand-yellow-400" />
+                <span>4.9/5 de satisfação</span>
+              </div>
+            </div>
 
             <div className="flex flex-wrap gap-4 mb-12">
               <a href="/catalogo-lawteck.pdf" target="_blank" rel="noreferrer" className="bg-white text-brand-blue-900 px-8 py-4 rounded-tr-2xl rounded-bl-2xl font-black text-lg hover:bg-brand-gray-100 transition-all uppercase shadow-lg hover:shadow-xl transform hover:-translate-y-1">
