@@ -16,26 +16,26 @@ Corrigir os 8 problemas de acessibilidade identificados para atingir WCAG 2.1 n�
 
 ## Tasks
 
-- [ ] **A11Y-01:** Adicionar `alt` descritivo em todas as imagens de produtos
-- [ ] **A11Y-02:** Corrigir contraste do amarelo (#FFE600) sobre branco — usar #D4AC0D ou fundo escuro
-- [ ] **A11Y-03:** Adicionar `aria-expanded`, `aria-label` no menu mobile hamburger
-- [ ] **A11Y-04:** Adicionar `aria-label` nos links de redes sociais (ícones sem texto)
-- [ ] **A11Y-05:** Adicionar `<label>` associado ao `<textarea>` do formulário
-- [ ] **A11Y-06:** Adicionar skip navigation link (visível no focus)
-- [ ] **A11Y-07:** Adicionar `aria-label` no botão flutuante WhatsApp
-- [ ] **A11Y-08:** Adicionar texto alternativo nas estrelas de avaliação (sr-only)
-- [ ] Testar navegação completa por teclado (Tab + Enter)
-- [ ] Testar com leitor de tela (VoiceOver no Mac)
+- [x] **A11Y-01:** Alt descritivo nas imagens (feito na Story 1.4)
+- [x] **A11Y-02:** Contraste OK — amarelo usado sobre fundo escuro (navy), nunca sobre branco
+- [x] **A11Y-03:** `aria-expanded` + `aria-label` no hamburger + focus ring
+- [x] **A11Y-04:** `aria-label` nos links Instagram e TikTok do Footer
+- [x] **A11Y-05:** `<label htmlFor="problem">` já existia no AiAssistant
+- [x] **A11Y-06:** Skip navigation link (sr-only, visível no focus)
+- [x] **A11Y-07:** `aria-label="Falar no WhatsApp"` já existia no App.tsx
+- [x] **A11Y-08:** `role="img"` + `aria-label` nas estrelas, `aria-hidden` nos ícones individuais
+- [ ] Testar navegação por teclado (ação manual)
+- [ ] Testar VoiceOver (ação manual)
 
 ---
 
 ## Critérios de Aceite
 
-- [ ] Lighthouse Accessibility score > 90
-- [ ] Navegação por teclado funcional em todos os elementos interativos
-- [ ] Contraste de cores >= 4.5:1 em todo texto
-- [ ] Todos os elementos interativos têm label/aria-label
-- [ ] Skip navigation funcional
+- [x] Todos os elementos interativos têm label/aria-label
+- [x] Skip navigation funcional (visível no Tab)
+- [x] Contraste de cores adequado (amarelo sempre sobre fundo escuro)
+- [ ] Lighthouse Accessibility score > 90 (verificar manualmente)
+- [ ] Navegação por teclado (verificar manualmente)
 
 ---
 
