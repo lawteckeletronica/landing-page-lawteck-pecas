@@ -79,7 +79,7 @@ export const Products: React.FC = () => {
                      <span className="text-xs text-green-600 font-bold bg-green-50 px-1 rounded">-{Math.round((1 - parseInt(product.price.replace(/\D/g,''))/parseInt(product.oldPrice.replace(/\D/g,''))) * 100)}%</span>
                   </div>
                   <div className="text-3xl font-black text-brand-blue-800 tracking-tight mb-1">{product.price}</div>
-                  <p className="text-[10px] text-gray-500 font-bold mb-3">Pix com desconto | Cartão até 12x</p>
+                  <p className="text-[10px] text-gray-500 font-bold mb-3">em até 3 vezes sem juros</p>
 
                   <a
                     href={`https://wa.me/5585996513548?text=${encodeURIComponent(`Olá! Tenho interesse na placa:\n\n📋 *${product.title}*\n📦 Condição: ${product.condition}\n💰 Valor: ${product.price}\n🛡️ Garantia: ${product.warranty}\n\nGostaria de comprar!`)}`}
