@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Truck, Search, Loader2 } from 'lucide-react';
 
 interface FreteResult {
-  prazo: number;
+  prazoMin: number;
+  prazoMax: number;
   servico: string;
-  cepDestino: string;
+  localidade: string;
+  uf: string;
 }
 
 const formatCep = (value: string): string => {
@@ -113,11 +115,14 @@ export const ShippingCalc: React.FC = () => {
                 </span>
               </div>
               <p className="text-2xl font-black text-brand-blue-900">
-                {result.prazo === 1
-                  ? '1 dia útil'
-                  : `${result.prazo} a ${result.prazo + 2} dias úteis`}
+                {result.prazoMin === result.prazoMax
+                  ? `${result.prazoMin} dia${result.prazoMin > 1 ? 's' : ''} útil${result.prazoMin > 1 ? '' : ''}`
+                  : `${result.prazoMin} a ${result.prazoMax} dias úteis`}
               </p>
-              <p className="text-xs text-gray-500 font-medium mt-2">
+              <p className="text-sm text-gray-600 font-medium mt-2">
+                {result.localidade} - {result.uf}
+              </p>
+              <p className="text-xs text-gray-400 font-medium mt-1">
                 *Prazo estimado após postagem
               </p>
             </div>

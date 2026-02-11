@@ -1,7 +1,24 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-const CEP_ORIGEM = '60420570';
-const SEDEX_CODE = '04014';
+// Prazo estimado SEDEX a partir de Fortaleza-CE por UF
+const PRAZO_POR_UF: Record<string, [number, number]> = {
+  // Ceará (mesmo estado)
+  CE: [1, 2],
+  // Nordeste próximo
+  PI: [2, 3], MA: [2, 3], RN: [2, 3], PB: [2, 3], PE: [2, 3],
+  // Nordeste mais distante
+  AL: [2, 4], SE: [3, 4], BA: [3, 5],
+  // Sudeste
+  MG: [3, 5], ES: [3, 5], RJ: [3, 5], SP: [3, 5],
+  // Centro-Oeste
+  DF: [3, 5], GO: [3, 5], TO: [3, 5], MT: [4, 6], MS: [4, 6],
+  // Sul
+  PR: [4, 6], SC: [4, 7], RS: [5, 7],
+  // Norte
+  PA: [3, 6], AP: [5, 8], AM: [5, 8], RR: [6, 9], AC: [6, 9], RO: [5, 7],
+};
+
+const PRAZO_DEFAULT: [number, number] = [5, 8];
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -17,58 +34,35 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const cep = typeof req.query.cep === 'string' ? req.query.cep.replace(/\D/g, '') : '';
-  const peso = typeof req.query.peso === 'string' ? req.query.peso : '1';
 
   if (!cep || cep.length !== 8) {
     return res.status(400).json({ error: 'CEP inválido. Informe 8 dígitos.' });
   }
 
   try {
-    const params = new URLSearchParams({
-      nCdEmpresa: '',
-      sDsSenha: '',
-      nCdServico: SEDEX_CODE,
-      sCepOrigem: CEP_ORIGEM,
-      sCepDestino: cep,
-      nVlPeso: peso,
-      nCdFormato: '1',
-      nVlComprimento: '30',
-      nVlAltura: '5',
-      nVlLargura: '20',
-      nVlDiametro: '0',
-      sCdMaoPropria: 'N',
-      nVlValorDeclarado: '0',
-      sCdAvisoRecebimento: 'N',
-    });
+    const viaCepRes = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
 
-    const response = await fetch(
-      `http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx/CalcPrecoPrazo?${params}`
-    );
-
-    if (!response.ok) {
-      return res.status(502).json({ error: 'Erro ao consultar Correios' });
+    if (!viaCepRes.ok) {
+      return res.status(502).json({ error: 'Erro ao validar o CEP' });
     }
 
-    const xml = await response.text();
+    const viaCepData = await viaCepRes.json();
 
-    const erroMatch = xml.match(/<MsgErro>([^<]+)<\/MsgErro>/);
-    if (erroMatch && erroMatch[1].trim()) {
-      return res.status(400).json({ error: erroMatch[1].trim() });
+    if (viaCepData.erro) {
+      return res.status(400).json({ error: 'CEP não encontrado' });
     }
 
-    const prazoMatch = xml.match(/<PrazoEntrega>(\d+)<\/PrazoEntrega>/);
-    if (!prazoMatch) {
-      return res.status(502).json({ error: 'Não foi possível obter o prazo de entrega' });
-    }
-
-    const prazo = parseInt(prazoMatch[1], 10);
+    const uf = viaCepData.uf as string;
+    const [min, max] = PRAZO_POR_UF[uf] || PRAZO_DEFAULT;
 
     return res.status(200).json({
-      prazo,
+      prazoMin: min,
+      prazoMax: max,
       servico: 'SEDEX',
-      cepDestino: cep,
+      localidade: viaCepData.localidade,
+      uf,
     });
-  } catch (error) {
-    return res.status(500).json({ error: 'Erro interno ao calcular prazo de entrega' });
+  } catch {
+    return res.status(500).json({ error: 'Erro ao calcular prazo de entrega' });
   }
 }
