@@ -62,10 +62,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       localidade: viaCepData.localidade,
       uf,
     });
-  } catch (err) {
-    return res.status(500).json({
-      error: 'Erro ao calcular prazo de entrega',
-      detail: err instanceof Error ? err.message : String(err),
-    });
+  } catch {
+    return res.status(500).json({ error: 'Erro ao calcular prazo de entrega' });
   }
 }
