@@ -18,7 +18,7 @@ export const products: Product[] = [
     price: "R$ 950,00",
     oldPrice: "R$ 1.200,00",
     warranty: "5 Meses",
-    features: ["Compatível 9k"],
+    features: ["Compatível 9k", "Testada", "Envio Imediato"],
     img: "/images/placa-universal-split.jpg",
   },
   {
