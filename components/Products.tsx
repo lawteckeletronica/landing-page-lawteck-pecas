@@ -49,11 +49,6 @@ export const Products: React.FC = () => {
                     Mais Vendida
                   </div>
                 )}
-                <div className="absolute top-4 left-4 z-10">
-                   <span className={`text-xs font-black px-3 py-1 rounded uppercase shadow-sm ${product.condition === 'Nova' ? 'bg-blue-500 text-white' : 'bg-green-500 text-white'}`}>
-                     {product.condition}
-                   </span>
-                </div>
                 <ProductImage
                   src={product.img}
                   alt={`Placa eletrônica ${product.title} - ${product.condition}`}
