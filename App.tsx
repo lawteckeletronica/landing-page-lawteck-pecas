@@ -54,13 +54,24 @@ class ErrorBoundary extends React.Component<
 const FloatingWhatsApp: React.FC = () => (
   <a
     href="https://wa.me/5585996513548?text=Olá! Quero comprar minha placa eletrônica."
-    className="fixed bottom-6 right-6 bg-whatsapp hover:bg-green-600 active:scale-95 text-white p-4 rounded-full shadow-2xl z-50 transition-all transform hover:scale-110 flex items-center gap-2 border-4 border-white animate-bounce-slow"
+    className="fixed bottom-6 right-6 z-50 group"
     target="_blank"
     rel="noreferrer"
     aria-label="Falar no WhatsApp"
   >
-    <MessageCircle size={28} fill="currentColor" />
-    <span className="font-bold hidden sm:inline uppercase text-sm tracking-wider">Orçamento Agora</span>
+    {/* Pulse ring */}
+    <span className="absolute inset-0 rounded-full bg-whatsapp/40 animate-wpp-ping pointer-events-none" />
+
+    {/* Main button */}
+    <span className="relative flex items-center gap-3 bg-whatsapp hover:bg-green-600 active:scale-95 text-white pl-5 pr-6 py-4 rounded-full shadow-2xl border-4 border-white transition-all hover:scale-105 animate-wpp-float">
+      <MessageCircle size={28} fill="currentColor" className="shrink-0 animate-wpp-shake" />
+      <span className="flex flex-col leading-tight text-left">
+        <span className="font-black text-sm uppercase tracking-wide animate-wpp-glow">Orçamento via WhatsApp</span>
+        <span className="font-bold text-[11px] uppercase tracking-wider opacity-90 animate-wpp-blink">
+          👉 Aperta aqui! 👈
+        </span>
+      </span>
+    </span>
   </a>
 );
 

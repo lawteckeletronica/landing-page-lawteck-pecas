@@ -88,3 +88,87 @@ body {
 .animate-fadeIn {
   animation: fadeIn 0.4s ease-out;
 }
+
+/* ===== WhatsApp Floating Button Animations ===== */
+
+/* Expanding ping ring */
+@keyframes wpp-ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  75%, 100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+.animate-wpp-ping {
+  animation: wpp-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Gentle float up-down */
+@keyframes wpp-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+.animate-wpp-float {
+  animation: wpp-float 3s ease-in-out infinite;
+}
+
+/* Icon shake for attention */
+@keyframes wpp-shake {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(15deg);
+  }
+  30% {
+    transform: rotate(-12deg);
+  }
+  45% {
+    transform: rotate(8deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+}
+.animate-wpp-shake {
+  animation: wpp-shake 2.5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Text glow pulse */
+@keyframes wpp-glow {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+}
+.animate-wpp-glow {
+  animation: wpp-glow 2s ease-in-out infinite;
+}
+
+/* Blinking "aperta aqui" */
+@keyframes wpp-blink {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+.animate-wpp-blink {
+  animation: wpp-blink 1.2s ease-in-out infinite;
+}
