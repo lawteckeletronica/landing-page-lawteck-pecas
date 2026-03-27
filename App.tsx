@@ -57,7 +57,7 @@ const FloatingWhatsApp: React.FC = () => (
     className="fixed bottom-6 right-6 z-50 group"
     target="_blank"
     rel="noreferrer"
-    aria-label="Falar no WhatsApp"
+    aria-label="Orçamento via WhatsApp"
   >
     {/* Pulse ring */}
     <span className="absolute inset-0 rounded-full bg-whatsapp/40 animate-wpp-ping pointer-events-none" />
